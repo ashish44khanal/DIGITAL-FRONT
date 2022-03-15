@@ -1,0 +1,180 @@
+$primaryColor: #1c9ed8;
+$primaryDark: #138bc3;
+$primaryLight: #21b2f5;
+$primaryYellow: #fdfbf7;
+$Gray: #fbfbff;
+$GrayD: #d4d4d4;
+$Pink: #ee6055;
+$Green: #009640;
+$lightGreen: #7ab929;
+$Dark: #0c120c;
+
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+body {
+  font-family: Mukta;
+}
+.bg-primary {
+  background-color: $primaryColor;
+}
+.bg-primaryLight {
+  background-color: $primaryLight;
+}
+.bg-primaryDark {
+  background-color: $primaryDark;
+}
+.bg-green {
+  background-color: $Green;
+}
+.bg-light-green {
+  background-color: $lightGreen;
+}
+.bg-pink {
+  background-color: $Pink;
+}
+.bg-primary-yellow {
+  background-color: $primaryYellow;
+}
+.bg-primaryD {
+  background-color: $primaryDark;
+}
+.bg-gray {
+  background-color: $Gray;
+}
+.bg-grayD {
+  background-color: $GrayD;
+}
+.border-primary {
+  border-color: $primaryColor;
+}
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+h4 {
+  display: block;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+h5 {
+  display: block;
+  font-size: 0.83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+h6 {
+  display: block;
+  font-size: 0.67em;
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+}
+.text-primary {
+  color: $primaryColor;
+}
+@mixin btn($bg, $color) {
+  background-color: $bg;
+  color: $color;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.2s;
+  }
+}
+.btn-primary {
+  @include btn($primaryColor, white);
+}
+.btn-secondary {
+  @include btn($GrayD, black);
+}
+.AiFillSetting {
+  @include btn($primaryYellow, black);
+}
+.input_txt {
+  border: 1px solid gray;
+  padding: 0.7rem 1rem;
+}
+@mixin btn-outline($color, $border) {
+  border: 1px solid $border;
+  color: $color;
+  padding: 10px 20px;
+  transition: all 0.2s;
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.2s;
+  }
+}
+.btn-outline-primary {
+  @include btn-outline($primaryColor, $primaryColor);
+}
+.btn-outline-secondary {
+  @include btn-outline($GrayD, $GrayD);
+}
+
+.card {
+  background-color: white;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+}
+body::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(117, 136, 144);
+  outline: 1px solid slategrey;
+}

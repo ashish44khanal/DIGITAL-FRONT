@@ -1,0 +1,102 @@
+@import './utils.scss';
+
+// navigation css
+.navs{
+    display: flex;
+    align-items: center;
+}
+.w-nav{
+    width: max-content;
+}
+.nav-items{
+    list-style-type: none;
+    font-family: 'Segoe UI';
+    font-weight:500;
+    font-size: large;
+    margin-right: 1.5rem;
+    position: relative;
+    &::before{
+        position: absolute;
+        content: '';
+        background-color:$primaryColor;
+        height: 3px;
+        width: 0%;
+        bottom: -10px;
+        left: 0;
+        transition: all 0.2s linear;
+    }
+}
+.nav-items.active{
+    color:$primaryColor;
+    &::before{
+        position: absolute;
+        content: '';
+        background-color:$primaryColor;
+        height: 3px;
+        width: 60%;
+        bottom: -10px;
+        left: 10px;
+        transition: all 0.2s linear;
+    }
+}
+.nav-items:hover{
+    color: $primaryColor;
+}
+.nav-items:hover::before{
+    position: absolute;
+    content: '';
+    background-color:$primaryColor;
+    height: 3px;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    transition: all 0.2s linear;
+}
+.navbar{
+    background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: all 0.3s ease-in;
+}
+.navbar.active{
+    background: white;
+    box-shadow: 1px 2px 4px 1px rgba($color: #000000, $alpha: 0.09);
+    transition: all 0.3s ease-in; 
+}
+.bars{
+    display: none;
+    font-size: x-large;
+}
+@media screen and (max-width:780px) {
+    .bars{
+        display: block;
+    }
+    .navs{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: absolute;
+        background: white;
+        box-shadow: 1px 8px 6px 2px rgba($color: #000000, $alpha: 0.09);
+        width: 80%;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 100vh;
+        left: -150%;
+        transform: rotate(40deg);
+        transition: all 0.4s ease-in-out;
+    }
+    .navs.active{
+        left: 0%;
+        transform: rotate(0deg);
+        transition: all 0.4s ease-in-out;
+    }
+    .nav-items{
+        margin-top: 5px;
+        width: 100%;
+        padding: 8px;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: 0.09);
+    }
+}
